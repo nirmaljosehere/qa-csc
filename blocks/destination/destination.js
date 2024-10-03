@@ -10,7 +10,7 @@ function getMetadata(name) {
 const aem = "https://publish-p135360-e1341441.adobeaemcloud.com";
 
 export default function decorate(block) {
-
+  console.log("block content page metadata variable >>>>>>>>>"+getMetadata("arrival"));
   const arrivalID = document.createElement('div');
   arrivalID.id = 'arrival';
   console.log("block content arrival variable >>>>>>>>>"+block.querySelector('div:nth-child(1)').textContent.trim());
@@ -22,7 +22,7 @@ export default function decorate(block) {
   cityDiv.id = `city-${arrivalID.textContent}`;
   block.querySelector('div:last-of-type').replaceWith(cityDiv);
 
-  fetch(`${aem}/graphql/execute.json/qatar-airways/city-details-by-slug;slug=${slugID.textContent}`)
+  fetch(`${aem}/graphql/execute.json/qatar-airways/city-details-by-slug;slug=${arrivalID.textContent}`)
     .then(response => response.json())
     .then(response => {
       const { cityName, cityDescription, contentBlocks } = response.data.cityList.items[0];
