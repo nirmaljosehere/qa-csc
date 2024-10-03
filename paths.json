@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/qatar-airways/:/",
-    "/content/qatar-airways/configuration:/.helix/config.json"
+    "/content/qa-csc/:/",
+    "/content/qa-csc/configuration:/.helix/config.json"
   ]
 }
