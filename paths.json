@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/aem-boilerplate/:/",
-    "/content/aem-boilerplate/configuration:/.helix/config.json"
+    "/content/qatar-airways/:/",
+    "/content/qatar-airways/configuration:/.helix/config.json"
   ]
 }

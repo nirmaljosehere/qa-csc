@@ -6,6 +6,20 @@
     ]
   },
   {
+    "id": "columns",
+    "components": []
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "video"
+    ]
+  },
+  {
     "id": "section",
     "components": [
       "text",
@@ -15,28 +29,15 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "content-fragment",
+      "article-fragment",
+      "video"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
-    ]
-  },
-  {
-    "id": "columns",
-    "components": [
-      "column"
-    ]
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
     ]
   }
 ]
