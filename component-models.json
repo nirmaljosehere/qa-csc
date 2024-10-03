@@ -1,5 +1,20 @@
 [
   {
+    "id": "page-metadata",
+    "fields": [
+        {
+            "component": "text",
+            "name": "arrival",
+            "label": "Arrival in"
+        },
+        {
+            "component": "text",
+            "name": "departure",
+            "label": "Flying from"
+        }
+    ]
+  },
+  {
     "id": "title",
     "fields": [
       {
@@ -215,6 +230,25 @@
         "label": "Slug",
         "valueType": "string"
       }
+    ]
+  },
+  {
+    "id": "destination",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "arrival",
+        "value": "",
+        "label": "Arrival in",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "departure",
+        "value": "",
+        "label": "Flying from",
+        "valueType": "string"
+      }      
     ]
   },
   {
