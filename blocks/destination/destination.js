@@ -26,7 +26,9 @@ export default function decorate(block) {
     .then(response => response.json())
     .then(response => {
       const { cityName, cityDescription, contentBlocks } = response.data.cityList.items[0];
-
+      console.log("response received>>>>>>>>>")
+      console.log(response.data.cityList.items[0]);
+      cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
     })
     .catch(error => {
       console.error('Error fetching data:', error);
