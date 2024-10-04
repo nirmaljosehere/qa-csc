@@ -21,7 +21,8 @@ export default function decorate(block) {
   const arrivalSlug = "london";
   const departureSlug ="doha";
 
-  fetch(`${aem}/qatar-airways/get-arrival-departure-details;arrivalSlug={arrivalSlug};departureSlug={departureSlug}`)  
+  fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};`)  
+  
     .then(response => response.json())
     .then(response => {
       console.log("response received>>>>>>>>>")
