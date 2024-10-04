@@ -28,7 +28,7 @@ export default function decorate(block) {
       const { arrivingInList, flyingFromList } = response.data;
       const arriving = arrivingInList.items[0];
       const flying = flyingFromList.items[0];
-      //const imageURL = `${aem}${arriving.mainImage._dynamicUrl}`;
+      const imageURL = `${aem}${arriving.mainImage._dynamicUrl}`;
 
       const createSection = (className, content) => `
         <div class='${className}'>
@@ -61,7 +61,19 @@ export default function decorate(block) {
       `;
       console.log(destinationDiv);
       //cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
+
+      // Check if a div with class hero-wrapper exists
+      const heroWrapper = document.querySelector('.hero-wrapper');
+      if (heroWrapper) {
+        // Find the first img tag within a picture tag in the hero-wrapper
+        const heroImg = heroWrapper.querySelector('picture img');
+        if (heroImg) {
+          // Replace the src of the img tag with imageURL
+          heroImg.src = imageURL;
+        }
+      }
     })
+    
     .catch(error => {
       console.error('Error fetching data:', error);
     });
