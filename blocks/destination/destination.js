@@ -28,8 +28,8 @@ export default function decorate(block) {
       const { arrivingInList, flyingFromList } = response.data;
       const arriving = arrivingInList.items[0];
       const flying = flyingFromList.items[0];
-      console.log('arriving>>>>>>>>'+arriving);
-      console.log('flying>>>>>>>>'+flying);
+      console.log(arriving);
+      console.log(flying);
       //const imageURL = `${aem}${arriving.mainImage._dynamicUrl}`;
 
       const createSection = (className, content) => `
@@ -54,6 +54,7 @@ export default function decorate(block) {
           ...flying.airportDetails
         })}
       `;
+      console.log(destinationDiv);
       //cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
     })
     .catch(error => {
