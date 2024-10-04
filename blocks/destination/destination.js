@@ -10,23 +10,22 @@ function getMetadata(name) {
 const aem = "https://publish-p135360-e1341441.adobeaemcloud.com";
 
 export default function decorate(block) {
-  const arrivalID = document.createElement('div');
-  arrivalID.id = 'arrival';
-  arrivalID.textContent =  block.querySelector('div:nth-child(1)').textContent.trim() || getMetadata("arrival");
-  block.querySelector('div:nth-child(1)').replaceWith(arrivalID);
 
+
+  const arrivalSlug = block.querySelector('div:nth-child(1)').textContent.trim();
+  const departureSlug = block.querySelector('div:nth-child(2)').textContent.trim();  
+
+  const destinationID = document.createElement('div');
+  destinationID.id = 'destination'+'-'+arrivalSlug+'-'+departureSlug;
+  block.querySelector('div:nth-child(1)').replaceWith(destinationID);
   // const cityDiv = document.createElement('div');
   // cityDiv.id = `city-${arrivalID.textContent}`;
   // block.querySelector('div:last-of-type').replaceWith(cityDiv);
-  const arrivalSlug = "london";
-  const departureSlug ="doha";
 
   fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};`)  
-  
     .then(response => response.json())
     .then(response => {
-      console.log("response received>>>>>>>>>")
-      console.log( response.data.arrivingInList.items[0]);
+      console.log(response.data);
       //cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
     })
     .catch(error => {
