@@ -19,8 +19,8 @@ export default function decorate(block) {
   block.querySelector('div:nth-child(1)').replaceWith(destinationID);
 
   const destinationDiv = document.createElement('div');
-  //cityDiv.id = `city-${arrivalID.textContent}`;
-  //block.querySelector('div:last-of-type').replaceWith(cityDiv);
+  destinationDiv.id = 'destination'+'-'+arrivalSlug;
+  block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
   fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};`)  
     .then(response => response.json())
