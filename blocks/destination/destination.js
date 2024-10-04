@@ -28,8 +28,6 @@ export default function decorate(block) {
       const { arrivingInList, flyingFromList } = response.data;
       const arriving = arrivingInList.items[0];
       const flying = flyingFromList.items[0];
-      console.log(arriving);
-      console.log(flying);
       //const imageURL = `${aem}${arriving.mainImage._dynamicUrl}`;
 
       const createSection = (className, content) => `
@@ -43,7 +41,7 @@ export default function decorate(block) {
       destinationDiv.innerHTML = `
         ${createSection('destination-flyingfrom', Object.fromEntries(
           Object.entries({
-            title: arriving.cityTitle ? `<h3>${arriving.cityTitle}</h3>` : '',
+            title: arriving.cityTitle ? `<h2>${arriving.cityTitle}</h2>` : '',
             description: arriving.description?.html,
             tourist: arriving.touristAttractions?.html,
             travel: arriving.travelConsiderations?.html,
@@ -52,10 +50,11 @@ export default function decorate(block) {
         ))}
         ${createSection('destination-arriving', Object.fromEntries(
           Object.entries({
-            title: flying.cityTitle,
+            title: flying.cityTitle ? `<h3>${flying.cityTitle}</h3>` : '',
             description: flying.description?.html,
             ...Object.fromEntries(
-              Object.entries(flying.airportDetails || {}).filter(([_, value]) => value)
+              Object.entries(flying.airportDetails || {})
+                .filter(([key, value]) => ['arrivalAtAirport', 'facilitiesAndAmenities', 'transportationAndParking'].includes(key) && value)
             )
           }).filter(([_, value]) => value)
         ))}
