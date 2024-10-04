@@ -41,18 +41,24 @@ export default function decorate(block) {
       `;
 
       destinationDiv.innerHTML = `
-        ${createSection('destination-flyingfrom', {
-          title: `<h3>${arriving.cityTitle}</h3>`,
-          description: arriving.description.html,
-          tourist: arriving.touristAttractions.html,
-          travel: arriving.travelConsiderations.html,
-          activities: arriving.activities.html
-        })}
-        ${createSection('destination-arriving', {
-          title: flying.cityTitle,
-          description: flying.description.html,
-          ...flying.airportDetails
-        })}
+        ${createSection('destination-flyingfrom', Object.fromEntries(
+          Object.entries({
+            title: arriving.cityTitle ? `<h3>${arriving.cityTitle}</h3>` : '',
+            description: arriving.description?.html,
+            tourist: arriving.touristAttractions?.html,
+            travel: arriving.travelConsiderations?.html,
+            activities: arriving.activities?.html
+          }).filter(([_, value]) => value)
+        ))}
+        ${createSection('destination-arriving', Object.fromEntries(
+          Object.entries({
+            title: flying.cityTitle,
+            description: flying.description?.html,
+            ...Object.fromEntries(
+              Object.entries(flying.airportDetails || {}).filter(([_, value]) => value)
+            )
+          }).filter(([_, value]) => value)
+        ))}
       `;
       console.log(destinationDiv);
       //cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
