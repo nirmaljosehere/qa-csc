@@ -237,11 +237,18 @@
     "fields": [
       {
         "component": "text-input",
-        "name": "text",
+        "name": "arrival",
         "value": "",
-        "label": "Arrival in",
+        "label": "Arrival Slug",
         "valueType": "string"
-      }   
+      },
+      {
+        "component": "text-input",
+        "name": "departure",
+        "value": "",
+        "label": "Departure Slug",
+        "valueType": "string"
+      }
     ]
   },
   {
