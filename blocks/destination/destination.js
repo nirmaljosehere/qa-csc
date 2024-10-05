@@ -58,9 +58,12 @@ export default function decorate(block) {
             )
           }).filter(([_, value]) => value)
         ))}
+        ${createSection('pricing-header', Object.fromEntries(
+          Object.entries({
+            title: `<h3>Trip fares to ${arrivalSlug.charAt(0).toUpperCase() + arrivalSlug.slice(1)} from ${departureSlug.charAt(0).toUpperCase() + departureSlug.slice(1)} </h3>`
+          }).filter(([_, value]) => value)
+        ))}
       `;
-      console.log(destinationDiv);
-      //cityDiv.innerHTML = `<div class="nirmaljose">Test div</div>`;
 
       // Check if a div with class hero-wrapper exists
       const heroWrapper = document.querySelector('.hero-wrapper');
@@ -73,14 +76,9 @@ export default function decorate(block) {
         }
       }
     })
-    
+
     .catch(error => {
       console.error('Error fetching data:', error);
     });
 
 }
-
-
-
-
-

@@ -2,16 +2,16 @@
   {
     "id": "page-metadata",
     "fields": [
-        {
-            "component": "text",
-            "name": "arrival",
-            "label": "Arrival in"
-        },
-        {
-            "component": "text",
-            "name": "departure",
-            "label": "Flying from"
-        }
+      {
+        "component": "text",
+        "name": "og:type",
+        "label": "OG Type"
+      },
+      {
+        "component": "text",
+        "name": "og:site_name",
+        "label": "OG Site Name"
+      }
     ]
   },
   {
