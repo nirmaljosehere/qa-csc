@@ -177,8 +177,8 @@
                       "template": {
                         "name": "Destination",
                         "model": "destination",
-                        "arrival": "london",
-                        "departure": "doha"                    
+                        "arrival": "default",
+                        "departure": "default"                    
                       }
                   }
               }
