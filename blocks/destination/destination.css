@@ -12,3 +12,6 @@
     font-weight: bolder;
 }
 
+[id^="destination-"].arabic-variants {
+    text-align: right;
+}

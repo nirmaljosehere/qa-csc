@@ -24,6 +24,9 @@ export default function decorate(block) {
 
   const destinationDiv = document.createElement('div');
   destinationDiv.id = 'destination'+'-'+arrivalSlug;
+  if (['ar', 'ar_qa', 'ar_bh', 'ar_dz', 'ar_eg', 'ar_il', 'ar_iq', 'ar_om', 'ar_sa'].includes(locale)) {
+    destinationDiv.classList.add('arabic-variants');
+  }
   block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
   fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};locale=${locale};`)  
