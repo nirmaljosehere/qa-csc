@@ -14,6 +14,10 @@ export default function decorate(block) {
   const arrivalSlug = block.querySelector('div:nth-child(1)').textContent.trim();
   const departureSlug = block.querySelector('div:nth-child(2)').textContent.trim();  
 
+  //const ogurl = ;
+  const locale = getMetadata("og:url").match(/\/language-masters\/([^/]+)\/destinations\//) ? getMetadata("og:url").match(/\/language-masters\/([^/]+)\/destinations\//)[1] : "en";
+  console.log(locale);
+
   const destinationID = document.createElement('div');
   destinationID.id = 'destination'+'-'+arrivalSlug+'-'+departureSlug;
   block.querySelector('div:nth-child(1)').replaceWith(destinationID);
@@ -22,7 +26,7 @@ export default function decorate(block) {
   destinationDiv.id = 'destination'+'-'+arrivalSlug;
   block.querySelector('div:last-of-type').replaceWith(destinationDiv);
 
-  fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};`)  
+  fetch(`${aem}/graphql/execute.json/qatar-airways/get-arrival-departure-details;arrivalSlug=${arrivalSlug};departureSlug=${departureSlug};locale=${locale};`)  
     .then(response => response.json())
     .then(response => {
       const { arrivingInList, flyingFromList } = response.data;
