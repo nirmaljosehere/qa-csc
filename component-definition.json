@@ -101,7 +101,7 @@
                 "template": {
                   "name": "Hero",
                   "model": "hero",
-                  "image": "/content/dam/qatar-airways/website/qatar-placeholder.jpg"
+                  "image": "/content/dam/qatar-airways/content-fragments/en/destinations/default/qatar-placeholder.jpg"
                 }
               }
             }
