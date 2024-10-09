@@ -77,6 +77,9 @@ export default function decorate(block) {
         if (heroImg) {
           // Replace the src of the img tag with imageURL
           heroImg.src = imageURL;
+          // Remove sibling <source> tags
+          const sourceTags = heroImg.parentElement.querySelectorAll('source');
+          sourceTags.forEach(sourceTag => sourceTag.remove());
         }
       }
     })
