@@ -1,6 +1,7 @@
 {
   "mappings": [
     "/content/qa-csc/:/",
-    "/content/qa-csc/configuration:/.helix/config.json"
+    "/content/qa-csc/configuration:/.helix/config.json",
+    "/content/site/nav:/header.json"
   ]
 }
