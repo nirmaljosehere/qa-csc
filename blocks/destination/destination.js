@@ -65,11 +65,6 @@ export default function decorate(block) {
             )
           }).filter(([_, value]) => value)
         ))}
-        ${createSection('pricing-header', Object.fromEntries(
-          Object.entries({
-            title: `<h3>Trip fares to ${arrivalSlug.charAt(0).toUpperCase() + arrivalSlug.slice(1)} from ${departureSlug.charAt(0).toUpperCase() + departureSlug.slice(1)} </h3>`
-          }).filter(([_, value]) => value)
-        ))}
       `;
 
       // Check if a div with class hero-wrapper exists
