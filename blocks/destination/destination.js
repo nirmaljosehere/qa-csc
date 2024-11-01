@@ -68,17 +68,17 @@ export default function decorate(block) {
       `;
 
       // Check if a div with class hero-wrapper exists
-      const heroWrapper = document.querySelector('.hero-wrapper');
-      if (heroWrapper) {
-        // Find the first img tag within a picture tag in the hero-wrapper
-        const heroImg = heroWrapper.querySelector('picture img');
-        if (heroImg) {
-          // Replace the src of the img tag with imageURL
-          heroImg.src = imageURL;
-          // Remove sibling <source> tags
-          const sourceTags = heroImg.parentElement.querySelectorAll('source');
-          sourceTags.forEach(sourceTag => sourceTag.remove());
-        }
+      // const heroWrapper = document.querySelector('.hero-wrapper');
+      // if (heroWrapper) {
+      //   // Find the first img tag within a picture tag in the hero-wrapper
+      //   const heroImg = heroWrapper.querySelector('picture img');
+      //   if (heroImg) {
+      //     // Replace the src of the img tag with imageURL
+      //     heroImg.src = imageURL;
+      //     // Remove sibling <source> tags
+      //     const sourceTags = heroImg.parentElement.querySelectorAll('source');
+      //     sourceTags.forEach(sourceTag => sourceTag.remove());
+      //   }
       }
     })
 
